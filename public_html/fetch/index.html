@@ -2,10 +2,17 @@
 <html>
   <head>
     <title>Fetch task</title>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
+    <script>                    
+      function fetchInfo() {                        
+        const inp = document.querySelector('#inp');                        
+        const btn = document.querySelector('#bt');                        
+        fetch(inp.value).then(resp => resp.text()).then(value => inp.value = value)                    
+      }                
+    </script> 
  </head>
  <body>
    <input id="inp">
-   <button id="bt">Press</button>
+   <button type="button" id="bt" onclick="fetchInfo()">Press</button>
  </body>
-</html>
+</html>       
